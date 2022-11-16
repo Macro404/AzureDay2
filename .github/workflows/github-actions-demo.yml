@@ -80,7 +80,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: java-app
-
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+            creds: ${{secrets.AZURE_CREDS }}
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@0b651ed7546ecfc75024011f76944cb9b381ef1e
