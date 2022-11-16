@@ -1,6 +1,9 @@
 name: Build and deploy JAR app to Azure Web App
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
+env:
+  AZURE_WEBAPP_NAME: doubleshot-app   # set this to your application's name
+  JAVA_VERSION: '17'                  # set this to the Java version to use
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -42,9 +45,6 @@ jobs:
 
 
 
-env:
-  AZURE_WEBAPP_NAME: doubleshot-app   # set this to your application's name
-  JAVA_VERSION: '17'                  # set this to the Java version to use
 
   build:
     runs-on: ubuntu-latest
